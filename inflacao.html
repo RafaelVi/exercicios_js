@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            font-family: 'manrope', sans-serif;
+        }
+       table{
+           text-align: center;
+           padding: 30px;
+           background: black;
+           color: white;
+           border: none;
+           margin: 10% auto;
+       }
+       tr{
+           background: red;
+       }
+
+       td{
+           padding: 50px 10px;
+       }
+    </style>
+</head>
+<body>
+    <script>
+        function mostrar(msg){
+            document.write(msg);
+        }
+        function calculoInflacao(valorInicial,valorFinal){
+                return (valorFinal-valorInicial)/valorInicial * 100;
+
+        }
+        function calculoMediaInflacao(media1,media2,media3){
+                return (media1+media2+media3)/3;
+
+        }
+        function calculoEstimativaDiaria(valorInicial,valorFinal){
+                 return (valorFinal - valorInicial)/6;
+        }
+        
+
+        var precoTomate24 = 3.30
+        var precoTomate30 = 4.70
+        var precoArroz24 = 2.99
+        var precoArroz30 = 3.25
+        var precoCenoura24 = 3.99
+        var precoCenoura30 = 4.14
+
+        var inflacaoTomate  =  calculoInflacao(precoTomate24,precoTomate30).toFixed(2);
+        var inflacaoArroz  =   calculoInflacao(precoArroz24,precoArroz30).toFixed(2);
+        var inflacaoCenoura  = calculoInflacao(precoCenoura24,precoCenoura30).toFixed(2);
+        var estimativaTomate = calculoEstimativaDiaria(precoTomate24,precoTomate30);
+        var estimativaArroz = calculoEstimativaDiaria(precoArroz24,precoArroz30);
+        var estimativaCenoura = calculoEstimativaDiaria(precoCenoura24,precoCenoura30);
+   
+
+        mostrar(inflacaoTomate + "% - Inflação do Tomate <br>" + inflacaoArroz + "% - Inflação do Arroz <br>" + inflacaoCenoura + "% - Inflação da Cenoura<br>" );      
+        mostrar(calculoMediaInflacao(parseFloat(inflacaoTomate),parseFloat(inflacaoArroz),parseFloat(inflacaoCenoura)).toFixed(2) + "% - Média geral de inflação <br>");
+        mostrar(estimativaTomate.toFixed(2) + " - Estimativa diaria do Tomate <br>");
+        mostrar(estimativaArroz.toFixed(2)+" - Estimativa diaria do Arroz <br>");
+        mostrar(estimativaCenoura.toFixed(2)+" - Estimativa diaria da Cenoura <br>");
+      
+
+
+    </script>
+    <!-- <table border="1">
+        <tr>
+            <td>Inflação Tomate</td>
+            <td>Inflação Arroz</td>
+            <td>Inflação Cenoura</td>
+            <td>Inflação Média</td>
+        </tr>
+        <tr>
+            <td>Tomate</td>
+            <td>Arroz</td>
+            <td>Cenoura</td>
+            <td>Média</td>
+        </tr>
+
+    </table> -->
+
+
+</body>
+</html>

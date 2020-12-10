@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laranjas</title>
+</head>
+<body>
+    <script>
+        function distribuirLaranjas(qtdLaranjas,qtdVizinhos){
+            return Math.trunc(qtdLaranjas/qtdVizinhos);
+        }
+        function restoDasLaranjas(qtdLaranjas,qtdVizinhos){
+            return qtdLaranjas % qtdVizinhos;
+        }
+
+        var qtdLaranjas = prompt("Quantas laranjas você tem Joselito?")
+        var qtdVizinhos = prompt("Quantos vizinhos você tem Joselito?")
+        var laranjas = distribuirLaranjas(qtdLaranjas,qtdVizinhos);
+        var restolaranjas = restoDasLaranjas(qtdLaranjas,qtdVizinhos);
+        
+        if(laranjas == 1){  
+            alert("Seus vizinhos teram cada um 1 laranja");
+        }
+        else if (laranjas < 1){
+            alert("Seus vizinhos não teram nenhuma laranja :(");
+        }
+        else{
+            alert("Seus vizinhos teram cada um "+ laranjas+" laranjas.");
+        }
+        if(restolaranjas < 1){  
+            
+            alert("Não sobrou nenhuma laranja pra você :(");
+        }
+        else if (restolaranjas == 1){
+            alert("Sobrou apenas 1 laranja pra você");
+        }
+        else{
+            alert("Você tera "+ restolaranjas+" laranjas que sobraram.");
+        }
+        
+        
+
+    
+        
+    </script>
+    
+</body>
+</html>

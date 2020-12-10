@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+    function enviarDados(){   
+    var formInfo = document.forms['form'];
+    var nomepizza = formInfo.elements['nomedapizza'].value;
+    var custopizza = formInfo.elements['custodapizza'].value;
+    var precopizza = formInfo.elements['precodapizza'].value;
+    var impostopizza = parseFloat(calcularImposto(precopizza).toFixed(2));
+    
+    
+    document.write("Para a pizza de " + nomepizza + ", o lucro liquido é de:R$" + calcularLucroLiquido(precopizza,impostopizza)  + " e o imposto é de:R$" + impostopizza);
+    }
+    function calcularImposto(valorpizza){
+        return valorpizza * (8.9/100);
+    }
+    function calcularLucroLiquido(valorpizza, impostopizza) {
+        return valorpizza - impostopizza
+    }
+
+    </script>
+    <form id="form">
+        <label for="nomedapizza">Nome da Pizza:</label><br>
+        <input type="text" name="nomedapizza" id="nomedapizza"><br>
+        <label for="custodapizza">Custo pra produzir a Pizza:</label><br>
+        <input type="number" name="custodapizza" id="custodapizza"><br>
+        <label for="precodapizza">Preço da Pizza:</label><br>
+        <input type="number" name="precodapizza" id="precodapizza"><br>
+        <input type="submit" placeholder="Enviar" onclick="enviarDados();"><br>
+
+
+    </form>
+    
+</body>
+</html>
