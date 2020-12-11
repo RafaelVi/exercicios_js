@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semaforo</title>
+</head>
+<body>
+    <script>
+        function verificarSemaforo(corDoSemaforo){
+            if(corDoSemaforo == "verde"){
+                console.log("Pode passar!");
+            }
+            else if(corDoSemaforo == "amarelo"){
+                return console.log("Melhor freiar.");
+            }
+            else if(corDoSemaforo == "vermelho") {
+                return console.log("Pare já!");
+            }
+            else{
+                return console.log("Hmm.. algo deu errado, insira as cores verde, vermelho ou amarelo");
+            }
+        }
+        document.write("Por favor para realizar o teste de semaforo abra o console do seu navegador e digite               verificarSemaforo() com a cor do semaforo desejada. Exemplo: verificarSemaforo('verde') e veja a mágica acontecer ;)")
+           
+    </script>
+    
+</body>
+</html>

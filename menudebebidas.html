@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Bebidas</title>
+</head>
+<body>
+    <script>
+            function processarPedido(numerodopedido){
+                if(numerodopedido == 1){
+                    return "Refrigerante";
+                }
+                else if(numerodopedido == 2){
+                    return "Água";
+                }
+                else if(numerodopedido == 3){
+                    return "Suco";
+                }
+                else {
+                    return "Pedido Invalido, por favor selecione um número que esteja no cardápio."
+                }
+                
+
+            }
+        console.log("--------------Menu de bebidas--------------");
+        console.log("--- 1- Refrigerante                     ---");
+        console.log("--- 2- Água                             ---");
+        console.log("--- 3- Suco                             ---");
+        console.log("-------------------------------------------");
+        console.log("Qual seu pedido?(Peça pelo numero do item, por favor.)");
+        var numeroPedido = (prompt(""));
+        console.log("O número do seu pedido é: " + numeroPedido);
+        console.log("Seu pedido é: " + processarPedido(numeroPedido)  )
+
+           
+    </script>
+    
+</body>
+</html>

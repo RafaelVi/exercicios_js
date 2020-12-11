@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motorista</title>
+</head>
+<body>
+    <script>
+        function verificarPermissaoDirigir(idade,habilitacao){
+            if(habilitacao == "sim"){
+                habilitacao = true
+            }
+            else if (habilitacao == "nao"){
+                habilitacao = false;
+            }
+            else {
+                return alert("Insira um valor valido") + alert("Por favor refaça o teste e insira sim ou nao na pergunta sobre habilitacao"); 
+                stop();
+            }
+            if(idade >= 18 && habilitacao == true){
+                return "Você pode dirigir =)";
+                
+            }
+            else{
+                return "Você não pode dirigir =(";
+            }         
+        }
+        var idade = prompt("Qual sua idade");
+        var habilitacao = prompt("Você é habilitado?");
+        var permissao = verificarPermissaoDirigir(idade,habilitacao);
+        console.log(permissao);
+           
+    </script>
+    
+</body>
+</html>

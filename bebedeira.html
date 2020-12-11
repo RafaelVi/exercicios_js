@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebedeira</title>
+</head>
+<body>
+    <script>
+        function verificarIdade(idade,idadePermitida){
+            if(idade >= idadePermitida && idade >= 0 && idadePermitida >= 0){
+                return "Você pode beber!"
+            }
+            else if(idade < idadePermitida && idade >= 0 && idadePermitida >= 0){
+                return "Você não pode beber";
+            }
+            else {
+                return "Por favor insira apenas números positivos.";
+            }
+        }
+        var idade = prompt("Qual sua idade");
+        var idadePermitida = prompt("Qual a idade necessária para o consumo de bebidas alcoólicas?");
+        var permissao = verificarIdade(idade,idadePermitida);
+        console.log(permissao);
+           
+    </script>
+    
+</body>
+</html>
