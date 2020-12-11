@@ -15,13 +15,13 @@
     var impostopizza = parseFloat(calcularImposto(precopizza).toFixed(2));
     
     
-    document.write("Para a pizza de " + nomepizza + ", o lucro liquido é de:R$" + calcularLucroLiquido(precopizza,impostopizza)  + " e o imposto é de:R$" + impostopizza);
+    document.write("Para a pizza de " + nomepizza + ", o lucro liquido é de:R$" + calcularLucroLiquido(precopizza,impostopizza,custopizza).toFixed(2)  + " e o imposto é de:R$" + impostopizza);
     }
     function calcularImposto(valorpizza){
         return valorpizza * (8.9/100);
     }
-    function calcularLucroLiquido(valorpizza, impostopizza) {
-        return valorpizza - impostopizza
+    function calcularLucroLiquido(valorpizza, impostopizza, custopizza) {
+        return valorpizza - impostopizza - custopizza;
     }
 
     </script>

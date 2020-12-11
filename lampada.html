@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada</title>
+</head>
+<body>
+        <script>
+            function testarFuncionamento(msg){
+                    var msg =   prompt(msg);
+                    if(msg == "sim"){
+                        return true
+                    }
+                    else if(msg == "nao"){
+                        return false
+                    }
+                    else {
+                        prompt("Por favor insira um valor valido (sim ou nao)");
+                        return 0;
+                    }
+            }
+            function testarPossiblidades(lampada,plug,bulbo){
+                    if (lampada == true){
+                        prompt("sua lampada funciona e não precisa de reparo!");
+                    }
+                    else{
+                        if(plug == false){
+                            prompt("Plugue a lampada");
+                        }
+                        else if(bulbo == false){
+                            prompt("Troque o bulbo");
+                        }
+                        else{
+                            prompt("Troque de lampada");
+                        }   
+
+                    }
+            }
+                var Lampada = testarFuncionamento("A lampada funciona?"); 
+                var plug = testarFuncionamento("O plug funciona?");
+                var bulbo =testarFuncionamento("O bulbo funciona?");
+                testarPossiblidades(Lampada,plug,bulbo);
+
+
+        </script>
+</body>
+</html>
