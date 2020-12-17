@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma Positivos</title>
+</head>
+<body>
+    <script>
+        var arrayNumeros = [];
+        var numeros = parseInt(prompt("Quantos números você vai digitar?"));//fornece o número
+        for(i = 0 ; i <  numeros ; i++){
+            arrayNumeros.push(parseInt(prompt("Digite um número")))  ;
+        }
+        var soma = 0
+        for(i = 0 ; i < arrayNumeros.length ; i++)
+        {               
+            if(arrayNumeros[i] > 0 ){
+                soma += arrayNumeros[i];
+            }
+            else if (arrayNumeros[i] <= 0){
+
+            }
+             
+        }
+        console.log(soma);
+
+
+
+    </script>
+    
+</body>
+</html>
