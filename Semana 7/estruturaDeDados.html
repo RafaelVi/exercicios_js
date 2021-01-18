@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 32</title>
+        <link rel="stylesheet" href="aula31.css">
+    </head>
+    <body>
+        <input id="chave">
+        <input id="valor">
+        <button id="salvar">Salvar</button>
+    </body>
+
+    <script>
+        let dicionario = {};
+
+        let chave = document.getElementById("chave");
+        let valor = document.getElementById("valor");
+        let btn = document.getElementById("salvar");
+
+        btn.addEventListener('click', function() {
+            dicionario[chave.value] = valor.value;
+            console.log(dicionario);
+            chave.value = "";
+            valor.value = "";
+        })
+
+    </script>
+</html>

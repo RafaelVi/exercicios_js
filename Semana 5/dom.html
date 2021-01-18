@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Aula 23</title>
+    </head>
+    <body>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text">
+        <label for="idade">Idade</label>
+        <input id="idade" type="number">
+        <p>Como você come pizza?:</p>
+        <input id="pizzacomgarfo" type="radio" value="Pizza com garfo" name="pizza">
+        <label for="hetero">pizza com garfo</label>
+        <input id="pizzacomamao" type="radio" value="Pizza com a mão" name="pizza">
+        <label for="pizzacomamao">pizza com a mão</label>
+        <button onclick="teste()">Teste</button>
+        <script>
+
+          function teste()
+          {
+            var nome = document.getElementById("nome");
+            var idade = document.getElementById("idade");
+            var sexualidade = document.getElementById("pizzacomgarfo");
+            var sexualidade2 = document.getElementById("pizzacomamao");
+            var formaescolhida;
+            if(sexualidade.checked){
+                sexualidade2.checked=false;
+                formaescolhida = sexualidade.value;
+            }
+            if(sexualidade2.checked){
+                sexualidade.checked=false;
+                formaescolhida = sexualidade2.value;
+            }
+            console.log(nome.value,idade.value,formaescolhida);
+          }            
+
+        </script>
+    </body>
+</html>

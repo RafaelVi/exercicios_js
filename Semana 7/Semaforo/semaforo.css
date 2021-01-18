@@ -1,0 +1,33 @@
+#section1{
+    display: flex;
+}
+label{
+    font-size: 64px;
+}
+#statuscarro{
+    font-size: 64px;
+}
+.semaforo{
+    display: flex;
+    flex-direction: column;
+    height: 233px;
+    width: 70px;
+    background-color: darkgray;
+}
+.bolaDoSemaforo{
+    width: 64px;
+    height: 64px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    border-radius: 50%;
+}
+#ir{
+    background-color: black;
+}
+#atencao{
+    background-color:black;
+}
+#parar{
+    background-color: black;
+}

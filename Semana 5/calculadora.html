@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <script>
+        function calculate(numero1,operador,numero2){
+                switch(operador){
+                    case "+":
+                        return numero1 + numero2;
+                        break;   
+                    case "-":
+                        return numero1 - numero2;
+                        break; 
+                    case "*":
+                        return numero1 * numero2;
+                        break;   
+                    case "/":
+                    
+                        if(numero2 == 0){
+                            return null;
+                        };
+                        return numero1 / numero2;
+                        break;
+                    default:
+                        return null;            
+                }          
+                
+        }
+
+        alert(calculate(Number(prompt("Qual o primeiro numero?")),prompt("Qual o operador?"),Number(prompt("Qual o segundo numero?"))));
+
+    </script>
+    
+</body>
+</html>

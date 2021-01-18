@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocadoraJSON</title>
+</head>
+<body>
+    
+</body>
+<script>
+var arrayCarros = [];
+var precoTanque = 120;
+ function carFactory(nome,placa){   
+    let carro = {
+    
+    nomeCarro: nome,
+    placaCarro:placa,     
+    estaAlugado: false,
+    gasolina: 100,
+    alugar: function(){
+        if(this.estaAlugado == false){
+            if(this.gasolina == 0){
+                this.gasolina = 100;
+                this.estaAlugado = true;
+                console.log("Você alugou "+ this.nomeCarro);
+                
+            }else{
+                this.estaAlugado = true;
+                console.log("Você alugou " + this.nomeCarro);
+            }  
+        }
+    },
+    devolver: function(){
+        if(this.estaAlugado == true){
+            if(this.gasolina < 100){
+                let custo = ((100 - this.gasolina) * precoTanque )/ 100;
+                console.log(`Você pagou ${custo} para reabastecer`);
+                this.gasolina = 100;
+                console.log('Voce esta devolvendo o '+  this.nomeCarro);
+                this.estaAlugado = false;
+            }else{
+            this.estaAlugado = false;
+            console.log('Voce esta devolvendo o '+  this.nomeCarro);
+            } 
+        }
+    },
+    andar: function(){
+        this.gasolina = Math.random() * 100;
+        this.gasolina = Math.trunc(this.gasolina);
+        console.log("Você gastou " + (100 - this.gasolina) + " litros de combustível." );
+        console.log("Você andou com o "+this.nomeCarro);
+    }
+    }
+    arrayCarros.push(carro);
+    return carro;
+
+}
+
+function jogaNaPagina(arr){
+    
+    let nome = document.createElement("span");
+    nome.textContent = arr.nomeCarro;
+
+    let placa = document.createElement("span");
+    placa.textContent = arr.placaCarro;
+
+    var botaoAlugar = document.createElement("button");
+    botaoAlugar.setAttribute("id","bt"+i);
+    botaoAlugar.textContent = "Alugar";
+    botaoAlugar.onclick = function()
+    {
+        arr.alugar();
+        botaoAlugar.disabled = true;
+        botaoAndar.disabled = false;
+        botaoDevolver.disabled = false;
+        
+    };
+   
+    var botaoDevolver = document.createElement("button");
+    botaoDevolver.disabled = true;
+    botaoDevolver.setAttribute("id","bt"+i);
+    botaoDevolver.textContent = "Devolver";
+    botaoDevolver.onclick = function()
+    {
+        arr.devolver();
+        botaoAlugar.disabled = false;
+        botaoAndar.disabled = true;
+        botaoDevolver.disabled = true;
+    };
+    var botaoAndar = document.createElement("button");
+    botaoAndar.disabled = true;
+    botaoAndar.setAttribute("id","bt"+i);
+    botaoAndar.textContent = "Andar";
+    botaoAndar.onclick = function()
+    {
+        arr.andar();
+        botaoAndar.disabled = true;
+        
+    };
+
+    var br = document.createElement("br");
+    document.body.append(nome);
+    document.body.append(placa);
+    document.body.append(botaoAlugar);
+    document.body.append(botaoDevolver);
+    document.body.append(botaoAndar);
+    document.body.append(br);
+}
+
+    let civic = carFactory("Civic","111-123");
+    let fusca = carFactory("fusca","111-352");
+    let porche = carFactory("porche","111-353");
+    let camaro = carFactory("camaro","111-141");
+    let pagani = carFactory("pagani","111-865");
+    let corsa = carFactory("corsa","111-127");
+    let celta = carFactory("celta","111-127");
+    let gol = carFactory("gol","111-936");
+    let kombi = carFactory("kombi","111-456");
+    let chevette = carFactory("chevette","111-890");
+
+    for(i=0; i < arrayCarros.length; i++){
+        jogaNaPagina(arrayCarros[i]);
+    }
+
+    
+
+
+
+</script>
+</html>

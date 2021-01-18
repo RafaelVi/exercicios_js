@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Presença de Alunos</title>
+</head>
+<body>
+    <script>
+            function listaDePresença(alunos,lista){
+                var presencaDiaria;
+                var MediaGeral;
+                var alunosMat = alunos;
+                
+                for (i = 0 ; i < lista.length; i++){
+                       presencaDiaria = lista[i];
+                       MediaGeral += (presencaDiaria / alunosMat.length ) * 100;
+                }
+                MediaGeral = MediaGeral / 5;
+                console.log(alunos);
+                console.log(lista);
+                console.log(MediaGeral);
+            }
+            var alunosMatriculados = [ "a", "b", "c", "d", "e" ];
+            var presencaSegunda = [ "b", "d", "e" ];
+            var presencaTerca = [ "a", "b", "c" ];
+            var presencaQuarta = [ "a", "b", "e" ];
+            var presencaQuinta = [ "a", "b", "c", "d" ];
+            var presencaSexta = [ "a", "b", "c", "d", "e" ];
+            var presencaSemana = [ presencaSegunda, presencaTerca, presencaQuarta, presencaQuinta, presencaSexta ];
+            listaDePresença(alunosMatriculados,presencaSemana);
+
+    </script>
+    
+</body>
+</html>

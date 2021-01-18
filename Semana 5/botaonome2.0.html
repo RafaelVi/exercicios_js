@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botao Nome</title>
+</head>
+<body>
+    <script>
+        function criarBotoes(nome){
+                document.write("<button onclick='alertarNome(\""+nome+"\")'>"+nome+"</button>");
+        }
+        function alertarNome(nome){
+            alert(nome);
+        }              //   0       1        2            3
+        var arrayNome = ["Giulia","Rebecca","Leonardo","Rafael"];
+
+         for(var i = 0 ; i < arrayNome.length ; i++){
+            criarBotoes(arrayNome[i]);
+            // var botao = document.createElement("button")
+            // botao.textContent = arrayNome[i]; 
+            // botao.setAttribute("onClick","alertarNome("+arrayNome[i]+")");
+            // document.body.append(botao);
+
+
+        }
+
+
+
+
+    </script>
+</body>
+</html>
